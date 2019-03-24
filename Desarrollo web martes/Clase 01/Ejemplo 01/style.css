@@ -1,0 +1,27 @@
+#miId {
+    color: white;
+    background-color: black;
+}
+
+span {
+    color: blue
+}
+
+body {
+    background-color: rgb(0, 250, 255);
+}
+
+h1 {}
+
+div.Title {
+    text-align: center;
+    margin-right: auto;
+    display: block;
+}
+
+h1.Title {
+    display: inline-block;
+    color: blue;
+    font-size: 300%;
+    margin-top: 0px;
+}
