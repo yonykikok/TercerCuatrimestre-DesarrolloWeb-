@@ -24,4 +24,5 @@ echo "</br>";
 echo "</br> <h3>Nombre: $Alumno->nombre</br>$Alumno->apellido </br>Edad: $Alumno->edad</br>Dni: $Alumno->dni</br>Direccion: $Alumno->direccion</h3>";//escribo
 echo "</br> <h3>Nombre: $alumno2->nombre</br>$alumno2->apellido </br>Edad: $alumno2->edad</br>Dni: $alumno2->dni</br>Direccion: $alumno2->direccion</h3>";//escribo
 */
+//include "CrearAlumno.php";
 ?>

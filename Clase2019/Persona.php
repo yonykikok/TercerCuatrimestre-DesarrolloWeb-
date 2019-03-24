@@ -2,15 +2,12 @@
 include "Humano.php";
 class Persona extends Humano
 {
-    public $dni;
+    public $edad;
 
-    public function __construct($nombre,$edad,$dni)
-    {
-        $this->dni=$dni;
-    }
-    function RetornarJson()
-    {
-        return json_decode($this);
+    function __construct($Anombre,$Aapellido,$Aedad)
+    {        
+        parent::__construct($Anombre,$Aapellido);
+        $this->edad=$Aedad;
     }
 }
 ?>

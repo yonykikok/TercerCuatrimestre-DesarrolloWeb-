@@ -4,13 +4,12 @@ class Alumno extends Persona
 {
     public $legajo;
 
-    public function __construct($nombre,$apellido,$edad,$legajo)
+    function __construct($Anombre,$Aapellido,$Aedad,$Alegajo)
     {
-        $this->legajo=$legajo;
+        parent::__construct($Anombre,$Aapellido,$Aedad);
+        $this->legajo=$Alegajo;
+     
     }
-    function RetornarJson()
-    {
-        return json_encode($this);
-    }
+    
 }
 ?>

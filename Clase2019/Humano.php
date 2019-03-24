@@ -3,16 +3,17 @@
 class Humano
 {
     public $nombre;
-    public $edad;
+    public $apellido;
     
-    public function __construct($nombre,$edad)
+    function __construct($Anombre,$Aapellido)
     {
-        $this->nombre=$nombre;
-        $this->edad=$edad;
+        $this->nombre=$Anombre;
+        $this->apellido=$Aapellido;
     }
+    
     function RetornarJson()
     {
-        return json_decode($this);
+        return json_encode($this);
     }
 }
-    ?>
+?>
