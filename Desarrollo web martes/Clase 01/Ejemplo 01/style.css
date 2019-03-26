@@ -18,8 +18,8 @@ h3.DivMenu {
     padding-bottom: 15px;
     display:inline-block;
     color:white;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 h3.DivMenu:hover{
     background-color:black;
