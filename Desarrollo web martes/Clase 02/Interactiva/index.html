@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./scripts.js"></script><!-- en el js ( window.addEventListener('load'),()=>{
+        var modal = document.getElementById('modal');
+        var btnCerrar = document.getElementById('btnCerrar');
+
+    }) -->
+</head>
+
+<body>
+    <dialog id="modal">
+
+        <h2>Laboratorio de computacion III</h2>
+        <p>Profesores: Baus/Mutti</p>
+        <p>Martes turno noche</p>
+        <p>Año 2019</p>
+        <button id="btnCerrar">btncerrar</button>
+    </dialog>
+    <button id="btnModal">Abrir Modal</button>
+    <h1>Lenguajes de programacion</h1>
+    <details>
+        <summary>JavaScript</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sint! Doloribus, aspernatur atque deleniti voluptates
+            repellendus exercitationem, voluptatum reprehenderit soluta quasi necessitatibus tempore natus maxime praesentium
+            eveniet molestias voluptate voluptatibus!</p>
+    </details>
+
+    <script>
+
+        var btnModal = document.getElementById('btnModal');
+
+        function MosttrarModal() 
+        {
+            var modal = document.getElementById('modal');
+            var btnCerrar = document.getElementById('btnCerrar');
+
+            btnModal.addEventListener('click', () => {
+                modal.setAttribute('open', true);
+
+            })
+            btnCerrar.addEventListener('click',()=>{
+
+                modal.removeAttribute('open');
+            })
+
+        }
+
+
+    </script>
+</body>
+
+</html>

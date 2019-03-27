@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./images/descarga.jpg" type="image/x-icon">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Formularios</h1>
+    <form action="pagina1.php" method="get" id="frmUno">
+        <!-- #nodireccion..  -->
+        <fieldset>
+            <LEGENd>Datos de Usuario</LEGENd>
+            <p>
+                <label for="txtNombre">Nombre:
+                    <input type="text" id="txtNombre" name="nombre" placeholder="Ingrese su nombre" required> </label>
+            </p>
+            <!-- nombre para recuperdad datos de la DB -->
+            <p>
+                <label for="txtClave">Clave:
+                    <input type="password" id="txtClave" name="password"> </label>
+            </p>
+        </fieldset>
+        <p>
+            <label for="txtEmail">Email:
+                <input type="email  " id="txtEmail" name="email"> </label>
+        </p>
+        <p>
+            <label for="txtEdad">Edad:
+                <input type="number" id="txtEdad" name="edad" min="1" max="10" value="5"> </label>
+        </p>
+        <p>
+            <label for="txtFoto">Foto:
+                <input type="file" id="fileFoto" name="file" accept="image/*, .jpg"> </label>
+        </p>
+        <p>
+            <label for="txtDate">Fecha:
+                <input type="date" id="txtDate" name="date"> </label>
+        </p>
+        <p>
+            <select name="" id="">
+                <optgroup label="lenguajes">
+                    <option value="0">C#</option>
+                    <option value="1">Visual basic</option>
+                </optgroup>
+                <optgroup label="lenguajes 2">
+                    <option value="2">JavaScript</option>
+                    <option value="3">Java</option>
+                </optgroup>
+            </select>
+        </p>
+        <p>
+            <label for="">Nada:
+                <input type="checkbox" name="" id="">
+            </label>
+            <br>
+            <label for="">Bicicleta:
+                <input type="checkbox" name="" id="">
+            </label>
+            <br>
+            <label for="">Patina:
+                <input type="checkbox" name="" id="">
+            </label>
+        </p>
+        <p>
+            <fieldset>
+                <legend>Sexo</legend>
+                <label for="">Masculino
+                    <input type="radio" name="sexo" id="" value="M">
+                </label>
+                <br>
+                <label for="">Femenino
+                    <input type="radio" name="sexo" id="" value="F">
+                </label>
+            </fieldset>
+        </p>
+        <p>
+            <label for="Comentario">Comentarios <br>   
+            <textarea name="" id="" cols="30" rows="10"></textarea></label>
+        </p>
+        <h2>Lab 3 UTN FRA todos los derechos reservados &copy;</h2>
+
+        <p>
+                E = m, c<sup>2</sup>
+        </p>
+        <p>
+            H<sub>2</sub>O
+        </p>
+        <p>
+            <u>Esto esta subrayado</u>
+        </p>
+        <p> 
+            <mark>Esto esta resaltado</mark>
+        </p>
+        <p><del>Esto esta tachado</del></p>
+        <input type="button" value="Enviar">
+        <input type="submit" value="Enviar Datos">
+        <input type="reset" value="Restablecer">
+        <!--  <button id="btnEnviar">Enviar Formulario</button> -->
+        <script>
+            var frm = document.getElementById('frmUno');
+            //eventos
+            //forma uno de llamar a la funcion.
+            // frm.addEventListener('submit', (e)=>{ 
+            frm.addEventListener('submit', function (e) {
+
+                e.preventDefault(); //estoy cortando lo que hace por defecto el evento
+                var txtNombre = document.getElementById('txtNombre');
+                var txtpassword = document.getElementById('txtClave');
+                if (txtNombre.value == "yonykikok") {
+
+                    if (txtClave.value == "4013") {
+                        alert("bienvenido al sitio " + txtNombre.value);
+                    }
+                    else {
+                        alert("password Incorrecto");
+                    }
+                } else {
+                    ss
+
+                    alert("Usuario invalido");
+                }
+
+
+            });
+            //forma dos de llamar a la funcion(declaro la funcion solo si la necesito usar en varios lados).
+            function manejarSubmit(e) {
+                e.preventDefault(); //estoy cortando lo que hace por defecto el evento
+                alert("maneje el submit");
+            }
+
+        </script>
+
+    </form>
+</body>
+
+</html>
