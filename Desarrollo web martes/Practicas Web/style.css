@@ -1,0 +1,68 @@
+ #login {
+     text-decoration: none;
+     position: relative;
+     background-color: lightblue;
+     float: right;
+     padding: 5px 15px 5px;
+ }
+ 
+ .btnLightBlue {
+     min-width: 100px;
+     min-height: 37px;
+     float: right;
+     border: none;
+     background-color: lightblue;
+ }
+ 
+ .btnLightBlue:hover {
+     background-color: black;
+     color: white;
+ }
+ 
+ .LoginUser {
+     display: inline-block;
+ }
+ 
+ h1 {
+     display: inline-block;
+ }
+ 
+ #login:hover {
+     background-color: black;
+     color: white;
+ }
+ 
+ body {
+     margin: 0px;
+     overflow: hidden;
+ }
+ 
+ #ImgRepair {
+     width: 100%;
+     opacity: 0.1;
+     position: absolute;
+ }
+ 
+ .DivMenu {
+     background-color: darkgray;
+     text-align: center;
+     width: 100%;
+ }
+ 
+ .DivMenu a {
+     display: inline-block;
+     position: relative;
+     color: white;
+     padding: 10px 15px 10px;
+     text-decoration: none;
+ }
+ 
+ .DivMenu a:hover {
+     background-color: black;
+ }
+ 
+ .DivTitle h1 {
+     position: relative;
+     margin: 0px;
+     color: blue;
+ }

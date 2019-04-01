@@ -18,7 +18,6 @@ class Humano
 
     public function GuardarAlumno($path)
     {
-        $file;
         if(file_exists($path))
         {
            $file = fopen($path,"a");
@@ -31,35 +30,8 @@ class Humano
         }   
         fclose($file);         
     }
-    function MostrarAlumno()
-    {
-            echo "Nombre: ".$this->nombre."<br/>";
-            echo "Apellido: ".$this->apellido."<br/>";
-            echo "Edad: ".$this->edad."<br/>";
-            echo "Legajo: ".$this->legajo."<br/><br/>";
-    }
-    function LeerAlumno($path)
-    {
-        $file=fopen($path,"r");
-        $arrayAlumnos=array();
-        while(!feof($file)){
-
-            $stringAlumno=explode(";",fgets($file));
-            if($stringAlumno=="")
-            {
-                break;
-            }
-            $auxAlumno = new Alumno($stringAlumno[0],$stringAlumno[1],$stringAlumno[2],$stringAlumno[3]);
-           var_dump($auxAlumno);
-           echo "<br/>";
-            array_push($arrayAlumnos,$auxAlumno);
-        }        
-        fclose($file);
-        return $arrayAlumnos;
-    }
     function GuardarAlumnoJson($path)
     {
-        $file;
         if(file_exists($path))
         {
            $file = fopen($path,"a");
@@ -71,6 +43,48 @@ class Humano
             fwrite($file,$this->RetornarJson()."\r\n");
         }   
         fclose($file);         
+    }
+    function MostrarAlumno()
+    {
+            echo "Nombre: ".$this->nombre."<br/>";
+            echo "Apellido: ".$this->apellido."<br/>";
+            echo "Edad: ".$this->edad."<br/>";
+            echo "Legajo: ".$this->legajo."<br/><br/>";
+    }
+     public static function LeerAlumnos($path)
+    {
+        $file=fopen($path,"r");
+        $arrayAlumnos=array();
+        while(!feof($file)){
+            $stringAlumno=explode(";",fgets($file));
+            if(feof($file))
+            {
+                break;
+            }
+            $auxAlumno = new Alumno($stringAlumno[0],$stringAlumno[1],$stringAlumno[2],$stringAlumno[3]);        
+            echo "<br/>";
+            array_push($arrayAlumnos,$auxAlumno);
+        }        
+        fclose($file);
+        return $arrayAlumnos;
+    }
+    public static function LeerAlumnosJson($path)
+    {
+        $file=fopen($path,"r");
+        $arrayAlumnos=array();
+        while(!feof($file)){            
+            $alumnoLeido=json_decode(fgets($file));      
+            if(feof($file))
+            {
+                break;
+            }
+            $auxAlumno = new Alumno($alumnoLeido->nombre,$alumnoLeido->apellido,$alumnoLeido->edad,$alumnoLeido->legajo);       
+            
+            echo "<br/>";
+            array_push($arrayAlumnos,$auxAlumno);
+        }        
+        fclose($file);
+        return $arrayAlumnos;
     }
 }
 ?>
