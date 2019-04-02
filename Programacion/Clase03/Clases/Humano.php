@@ -86,5 +86,22 @@ class Humano
         fclose($file);
         return $arrayAlumnos;
     }
+    
+    public static function CrearImgConMarca($path,$pathLogo,$pathNewImg)
+    {
+        $marca = imagecreatefrompng($pathLogo);//creamos el sello
+        $img = imagecreatefromjpeg($path);//creamos la imagen
+
+        $right =10;//posiscion en px
+        $bottom = 10;
+        $jx = imagesx($marca);
+        $jy = imagesY($marca);
+
+        imagecopy($img, $marca, imagesx($img) - $jx - $right, imagesy($img) - $jy - $bottom, 0, 0, imagesx($marca), imagesy($marca));
+
+
+        move_uploaded_file($path,$pathNewImg);
+        imagepng($img, $pathNewImg);//guarda la imagen que creamos con el sello de agua en el pathNewImg
+    }
 }
 ?>

@@ -18,7 +18,6 @@
 
                     $path="./Archivos/ListaAlumnos.txt";
                     $pathJson="./Archivos/ListaAlumnosJson.json";
-                
                     $alumno->GuardarAlumnoJson($pathJson);
                     $alumno->GuardarAlumno($path);
                     echo "Alumno agregado con exito"; 

@@ -1,5 +1,5 @@
 <?php
-echo "<h1>Multitask</h1>";
+//echo "<h1>Multitask</h1>";
 $dato = $_SERVER['REQUEST_METHOD'];
 if($dato=="POST")
 {
