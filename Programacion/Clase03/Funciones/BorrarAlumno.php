@@ -1,40 +1,37 @@
 <?php
-
 include "./Clases/alumno.php";
-
-if(isset($_GET['Legajo']))
-{
     $path="./Archivos/ListaAlumnos.txt";
     $pathJson="./Archivos/ListaAlumnosJson.json";
     $arrayAlumnos=array();
     $newArrayAlumnos=array();
     $arrayAlumnos=Alumno::LeerAlumnosJson($pathJson);
     $aviso="no se encontro el numero de legajo";
-    foreach($arrayAlumnos as $auxAlumno)
+    $AlumnoAeliminar=json_decode(file_get_contents("php://input"), true);//leo el json del raw y lo manejo como si fuera un alumno indexado
+    if(isset($AlumnoAeliminar))
     {
-        if($auxAlumno->legajo==$_GET['Legajo'])
+        
+        foreach($arrayAlumnos as $auxAlumno)
         {
-            $aviso="se borro el alumno con el legajo: ".$_GET['Legajo'];
-        }
-        else
+            if($auxAlumno->legajo==$AlumnoAeliminar['legajo'])
+            {
+                $aviso="se borro el alumno con el legajo: ".$AlumnoAeliminar['legajo'];
+            }
+            else
+            {
+                array_push($newArrayAlumnos,$auxAlumno);    //creo un nuevo array excluyendo al que vamos a eliminar.        
+            }
+        }    
+        
+        unlink("./Archivos/ListaAlumnosJson.json");//borro el archivo fisico
+        foreach($newArrayAlumnos as $alumno)
         {
-            array_push($newArrayAlumnos,$auxAlumno);    //creo un nuevo array excluyendo al que vamos a eliminar.        
+            $auxAlumno=new Alumno((array)$alumno);
+            $auxAlumno->GuardarAlumnoJson("./Archivos/ListaAlumnosJson.json");//creamos un nuevo archivo con todos los elementos del "newArrayAlumnos"
         }
-    }    
-    unlink("./Archivos/ListaAlumnosJson.json");//borro el archivo fisico
-
-    foreach($newArrayAlumnos as $alumno)
-    {
-        $auxAlumno=new Alumno($alumno->nombre,$alumno->apellido,$alumno->edad,$alumno->legajo);
-        $auxAlumno->GuardarAlumnoJson("./Archivos/ListaAlumnosJson.json");//creamos un nuevo archivo con todos los elementos del "newArrayAlumnos"
+        echo $aviso;//aviso si se borro o no el alumno.
     }
-    echo $aviso;//aviso si se borro o no el alumno.
-}
-else
-{
-    echo "falta el campo Legajo en Get (DELETE)";
-}
-
-
-
+    else
+    {
+        echo "no se pudo leer el alumno a eliminar.(DELETE->RAW)";
+    }
 ?>

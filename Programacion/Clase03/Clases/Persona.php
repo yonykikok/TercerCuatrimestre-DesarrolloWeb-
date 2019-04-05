@@ -4,10 +4,13 @@ class Persona extends Humano
 {
     public $edad;
 
-    function __construct($Anombre,$Aapellido,$Aedad)
-    {        
-        parent::__construct($Anombre,$Aapellido);
-        $this->edad=$Aedad;
+    function __construct($params)
+    {             
+        if (is_array($params) && array_key_exists('edad',$params))
+        {
+            $this->edad=$params['edad'];
+        }
+        parent::__construct($params);
     }
 }
 ?>

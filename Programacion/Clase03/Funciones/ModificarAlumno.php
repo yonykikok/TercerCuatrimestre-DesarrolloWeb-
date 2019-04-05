@@ -1,66 +1,47 @@
 <?php
     include_once "./Clases/alumno.php";
-
     $path="./Archivos/ListaAlumnos.txt";
     $pathJson="./Archivos/ListaAlumnosJson.json";
     $arrayAlumnos=array();
     $newArrayAlumnos=array();
-    if(isset($_GET['Legajo']))
+ 
+    
+    $alumnoLeido=json_decode(file_get_contents("php://input"), true);
+  //  var_dump($alumnoLeido);
+    if(isset($alumnoLeido))
     {
-        if(isset($_GET['Nombre']))
+        $aviso="no se encontro el numero de legajo";
+        if(file_exists($pathJson))
         {
-            if(isset($_GET['Apellido']))
+            $arrayAlumnos=Alumno::LeerAlumnosJson($pathJson);
+            foreach($arrayAlumnos as $auxAlumno)
             {
-                if(isset($_GET['Edad']))
+                if($auxAlumno->legajo==$alumnoLeido['legajo'])
                 {
-                    $nombre=$_GET['Nombre'];
-                    $apellido=$_GET['Apellido'];
-                    $edad=$_GET['Edad'];                   
-
-                    $arrayAlumnos=Alumno::LeerAlumnosJson($pathJson);
-                    $aviso="no se encontro el numero de legajo";
-                    foreach($arrayAlumnos as $auxAlumno)
-                    {
-                        if($auxAlumno->legajo==$_GET['Legajo'])
-                        {
-                            $auxAlumno->nombre=$nombre;
-                            $auxAlumno->apellido=$apellido;
-                            $auxAlumno->edad=$edad;
-                            $aviso="se modifico el alumno con el legajo: ".$_GET['Legajo'];
-                        }
-                        array_push($newArrayAlumnos,$auxAlumno);    //creo un nuevo array con el alumno modificado       
-                        
-                    }    
-                    unlink("./Archivos/ListaAlumnosJson.json");//borro el archivo fisico
-
-                    foreach($newArrayAlumnos as $alumno)
-                    {
-                        $auxAlumno=new Alumno($alumno->nombre,$alumno->apellido,$alumno->edad,$alumno->legajo);
-                        $auxAlumno->GuardarAlumnoJson("./Archivos/ListaAlumnosJson.json");//creamos un nuevo archivo con todos los elementos del "newArrayAlumnos"
-                    }
-                    echo $aviso;//aviso si se borro o no el alumno.
-                } 
-                else
-                {
-                    echo "falta el campo Edad en POST (PUT)";
+                    $auxAlumno->nombre=$alumnoLeido['nombre'];
+                    $auxAlumno->apellido=$alumnoLeido['apellido'];
+                    $auxAlumno->edad=$alumnoLeido['edad'];
+                    $aviso="se modifico el alumno con el legajo: ".$alumnoLeido['legajo'];
+                   // var_dump($auxAlumno);
                 }
-            } 
-            else
+               array_push($newArrayAlumnos,$auxAlumno);    //creo un nuevo array con el alumno modificado       
+            }    
+            unlink("./Archivos/ListaAlumnosJson.json");//borro el archivo fisico
+            
+            foreach($newArrayAlumnos as $alumno)
             {
-                echo "falta el campo Apellido en POST (PUT)";
+                $auxAlumno=new Alumno((array)$alumno);                
+                $auxAlumno->GuardarAlumnoJson("./Archivos/ListaAlumnosJson.json");//creamos un nuevo archivo con todos los elementos del "newArrayAlumnos"
             }
-        } 
+        }
         else
         {
-            echo "falta el campo Nombre en POST (PUT)";
+            
         }
-    }  
+        echo $aviso;//aviso si se borro o no el alumno.
+    }
     else
     {
-        echo "falta el campo Legajo en POST (PUT)";
+        echo "no se pudo leer el alumno a modificar(PUT->RAW)";
     }
-
-
-
-
 ?>
