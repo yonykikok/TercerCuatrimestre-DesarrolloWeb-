@@ -1,0 +1,1 @@
+SELECT a.nombre,l.nombre,m.descripcion FROM `alumno` as a, `localidad` as l,`materia_alumno` as ma,`materia` as m WHERE ma.id=a.id and a.idLocalidad=l.id and ma.idMateria=m.id
