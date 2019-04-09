@@ -12,15 +12,32 @@ window.addEventListener('load', () => {
     btnCancelar = document.getElementById('btnCancelar');
 
     btnLogin.addEventListener('click', () => {
-        modalLogin.setAttribute('open', true);
-    })
+        if(modalRegistrarse.open==false)
+        {
+            modalLogin.setAttribute('open', true); 
+        }
+        else
+        {
+            modalRegistrarse.removeAttribute('open');  
+            modalLogin.setAttribute('open', true); 
+        }  
+        })
 
     btnCerrar.addEventListener('click', () => {
+
         modalLogin.removeAttribute('open');
     })
 
     btnRegistrarse.addEventListener('click', () => {
-        modalRegistrarse.setAttribute('open', true);
+        if(modalLogin.open==false)
+        {        
+            modalRegistrarse.setAttribute('open', true);    
+        }
+        else
+        {
+            modalLogin.removeAttribute('open');
+            modalRegistrarse.setAttribute('open', true);   
+        }
     })
 
     btnCancelar.addEventListener('click', () => {
