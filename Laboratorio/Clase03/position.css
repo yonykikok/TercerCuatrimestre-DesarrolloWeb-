@@ -1,0 +1,23 @@
+*{
+    border: 0;
+    padding: 0;
+}
+div{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(137, 32, 235, 0.416);
+   /* position: sticky;/*sigue estando por mas que scrolees*/
+    position: relative;
+    top: 25px;
+    left: 25px;
+    z-index: -2;
+}
+.interno{
+    height: 50px;
+    width: 50px;
+    background-color:blue;
+    position: absolute;
+    top:10px;
+    left: 10px;    
+    z-index: -1;
+}

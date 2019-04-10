@@ -1,0 +1,42 @@
+*{/*resetea todos los valores del navegador predeterminados*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*cuenta al padding como parte del width*/
+}
+ul{
+    list-style-type: none;/*le sacamos los puntitos a las listas*/
+
+}
+ul li{
+    background-color:lightblue;
+    float: left;
+    width: 33.3%;   
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-right: 4px grey solid;
+}
+ul li:hover{
+    background-color:lightcoral;
+}
+ul li:last-child{/*seudo clase*/
+    border-right: none;
+}
+
+
+@media only screen and (min-width:600px){/*media Query*/
+    ul li{
+        float: none;
+        border-right: none;
+        border-bottom: 4px solid red;
+        position: relative;
+        left: -20px;
+        transition: left 2s;/*para animaciones */
+    }
+    ul li:last-child{
+        border-bottom:none;
+    }
+    ul li:hover{
+        left: 0;
+    }
+}
