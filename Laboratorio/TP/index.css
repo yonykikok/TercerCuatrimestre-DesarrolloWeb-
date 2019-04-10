@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    border: 0;
+}
+
+div {
+    left: 15%;
+}
+#titleBlog {
+    color: #eb833ecc;
+    margin: 0;
+}
+
+#titleDe {
+    color: lightblue;
+    margin: 0;
+}
+
+#titleViajes {
+    color: violet;
+    margin: 0;
+}
+
+.titleP {    
+    margin: 0;
+    display: inline-block;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titleDiv {    
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+h4 {    
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70%;
+    position: relative;
+    left: 154px;
+}
+
+.mainMenuDiv {
+    margin-top: 25px;
+    background-color: rgb(199, 5, 167);
+    padding: 15px;
+    text-align: center;
+}
+
+.mainMenuDiv a {
+    text-decoration: none;
+    padding-right: 5%;
+    padding-left: 5%;
+    color: white;
+}
+
+
+h5 {
+    margin-top:80px;
+    margin-bottom: 5px;
+    display: block;
+    color: rgb(81, 202, 243);
+    font-size: 130%;
+}
+#firstH5{
+    margin-top: 20px;
+}
+
+img {
+    height: 150px;
+    width: 200px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.promocionesDiv{
+    position: relative;
+    left: 15%;
+    max-width: 50%;    
+}
+a:hover{
+    padding-top: 15px;
+    padding-bottom: 16px;
+    background-color:lightblue;
+}
+
+.botonCeleste
+{
+    margin-top: 800px;
+    padding: 10px;
+    background-color: blue;    
+    text-decoration: none;
+    padding-right: 5%;
+    padding-left: 5%;
+    color: white;
+}
+#SobreNosotrosDiv{
+    position: relative;
+    left: 15%;
+    background-color:  rgb(199, 5, 167);
+    color:white;
+    border-left: 15%;
+    border-color: blue;
+}
+#sobreNosotros{
+    color:white;
+}
