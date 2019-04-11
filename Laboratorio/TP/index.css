@@ -6,65 +6,76 @@
 div {
     left: 15%;
 }
+
 #titleBlog {
-    color: #eb833ecc;
+    color: #ff8432;
     margin: 0;
 }
 
 #titleDe {
-    color: lightblue;
+    color: rgb(69, 178, 214);
     margin: 0;
 }
 
 #titleViajes {
-    color: violet;
+    color: rgb(209, 65, 209);
     margin: 0;
 }
 
-.titleP {    
+.titleP {
     margin: 0;
     display: inline-block;
     font-size: 150%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.titleDiv {    
+.titleDiv {
     margin: 0;
     position: relative;
     display: inline-block;
 }
 
-h4 {    
-    margin: 0;
+.pEslogan {
+    margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 70%;
+    font-size: 35%;
     position: relative;
     left: 154px;
+    font-weight: bold;
 }
 
-.mainMenuDiv {
-    margin-top: 25px;
+
+/*----------------------------NAV MENU-----------------------*/
+
+.navMenu>a:hover {
+    padding-top: 15px;
+    padding-bottom: 16px;
+    background-color: lightblue;
+}
+
+.navMenu {
+    margin-top: 5px;
     background-color: rgb(199, 5, 167);
     padding: 15px;
     text-align: center;
 }
 
-.mainMenuDiv a {
+.navMenu>a {
     text-decoration: none;
     padding-right: 5%;
     padding-left: 5%;
     color: white;
 }
 
-
 h5 {
-    margin-top:80px;
+    margin-top: 80px;
     margin-bottom: 5px;
     display: block;
     color: rgb(81, 202, 243);
     font-size: 130%;
 }
-#firstH5{
+
+#firstH5 {
     margin-top: 20px;
 }
 
@@ -75,35 +86,92 @@ img {
     margin-right: 15px;
     margin-bottom: 15px;
 }
-.promocionesDiv{
+
+.promocionesDiv {
     position: relative;
     left: 15%;
-    max-width: 50%;    
-}
-a:hover{
-    padding-top: 15px;
-    padding-bottom: 16px;
-    background-color:lightblue;
+    max-width: 60%;
 }
 
-.botonCeleste
-{
+.promocionesDiv p {
+    max-width: 70%;
+}
+
+.botonCeleste {
     margin-top: 800px;
     padding: 10px;
-    background-color: blue;    
+    background-color: rgb(83, 198, 236);
     text-decoration: none;
     padding-right: 5%;
     padding-left: 5%;
     color: white;
 }
-#SobreNosotrosDiv{
+
+#SobreNosotrosDiv {
+    background-color: rgb(199, 5, 167);
+    color: white;
+    padding-bottom: 20px;
+}
+
+#SobreNosotrosDiv h5 {
+    color: white;
+}
+
+#SobreNosotrosDiv p,
+#sobreNosotrosH5 {
+    max-width: 40%;
     position: relative;
     left: 15%;
-    background-color:  rgb(199, 5, 167);
-    color:white;
-    border-left: 15%;
-    border-color: blue;
 }
-#sobreNosotros{
-    color:white ;
+
+#sobreNosotrosDiv p {
+    display: inline-block;
+}
+
+#navMenuSobrePie {
+    position: relative;
+    float: right;
+    text-align: center;
+    margin-right: 10%;
+}
+
+#navMenuSobrePie a {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+#navMenuSobrePie a:hover {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(26, 191, 247);
+}
+
+#navOtrosPosts {
+    position: relative;
+    float: right;
+}
+
+#navOtrosPosts a {
+    margin-left: 5%;
+    display: block;
+    text-decoration: none;
+    min-width: 100%;
+    color: lightblue;
+    padding-left: 10px;
+    padding-right: 100%;
+    margin-bottom: 15%;
+}
+
+#navOtrosPosts a:hover {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: lightblue;
+    color: white;
+}
+
+#divOtrosPosts {
+    display: block;
+    margin-right: 20%;
 }
