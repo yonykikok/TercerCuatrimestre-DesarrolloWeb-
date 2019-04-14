@@ -45,27 +45,56 @@ div {
 }
 
 
-/*----------------------------NAV MENU-----------------------*/
+/*                  NAVMENU                         */
 
-.navMenu>a:hover {
-    padding-top: 15px;
-    padding-bottom: 16px;
-    background-color: lightblue;
+#divMenuPrincipal {
+    background-color: rgb(241, 31, 224);
 }
 
-.navMenu {
-    margin-top: 5px;
-    background-color: rgb(199, 5, 167);
-    padding: 15px;
-    text-align: center;
+#navMenu {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
 }
 
-.navMenu>a {
-    text-decoration: none;
-    padding-right: 5%;
-    padding-left: 5%;
+ul,
+ol {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+}
+
+.listaMenu>li {
+    float: left;
+    margin-bottom: -4px;
+}
+
+.listaMenu li a {
+    background-color: rgb(241, 31, 224);
     color: white;
+    text-decoration: none;
+    padding: 14px 12px;
+    display: block;
 }
+
+.listaMenu li a:hover {
+    background-color: rgb(65, 195, 238);
+    padding: 14px 12px;
+}
+
+.listaMenu li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.listaMenu li:hover>ul {
+    display: block;
+    z-index: 1;
+}
+
+
+/*--------------------------------------------------*/
 
 h5 {
     margin-top: 80px;
@@ -165,8 +194,6 @@ img {
 }
 
 #navOtrosPosts a:hover {
-    padding-top: 5px;
-    padding-bottom: 5px;
     background-color: lightblue;
     color: white;
 }
