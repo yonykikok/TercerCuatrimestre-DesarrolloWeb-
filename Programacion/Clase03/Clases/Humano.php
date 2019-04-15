@@ -94,6 +94,36 @@ class Humano
         fclose($file);  
         return $retorno;       
     }
+    static function insertarHeaderDeTabla(){
+       
+        $retornoHeader="<table border='2px'>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Legajo</th>
+            <th>Imagen</th>
+        </tr>";
+        return $retornoHeader;
+    }
+    static function insertarPieDeTabla(){
+        $retornoPie="</table>";
+        return $retornoPie;
+    }
+    
+    function obtenerFilaAlumno()
+    {
+            $retornoFila="<tr>
+            <td>".$this->nombre."</td>
+            <td>".$this->apellido."</td>
+            <td>".$this->edad."</td>
+            <td>".$this->legajo."</td> 
+            <td><img src='".$this->imagen."' alt='foto_alumno' height=50 width=50 border=2>"."</td>
+            </tr>";
+            
+            echo $this->imagen;
+            return $retornoFila;
+    }
     function MostrarAlumno()
     {
             echo "<br/>Nombre: ".$this->nombre."<br/>";
