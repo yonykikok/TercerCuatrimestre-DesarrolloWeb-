@@ -22,63 +22,12 @@ SET time_zone = "+00:00";
 -- Base de datos: `utn`
 --
 
-DELIMITER $$
 --
 -- Procedimientos
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Catorce` ()  NO SQL
-UPDATE `productos` as prod SET `Precio`=97.50 WHERE prod.Tamaño="Grande"$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Cinco` ()  NO SQL
-SELECT envio.Numero FROM `envios` as envio ORDER BY envio.Numero LIMIT 3$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Cuatro` ()  NO SQL
-SELECT SUM(prov.Cantidad) FROM `envios` as prov WHERE 1$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Dieciseis` ()  NO SQL
-DELETE FROM `productos` WHERE pNumero=1$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Diecisiete` ()  NO SQL
-DELETE FROM `provedores` WHERE provedores.Numero not in(SELECT envios.Numero FROM envios)$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Diez` ()  NO SQL
-SELECT prov.Direccion, prov.Localidad FROM `provedores` as prov WHERE prov.Nombre LIKE'%I%'$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Doce` ()  NO SQL
-INSERT INTO `provedores`(`Numero`) VALUES (103)$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Dos` ()  NO SQL
-SELECT prov.Numero,prov.Nombre,prov.Direccion,prov.Localidad FROM `provedores` as prov WHERE prov.Localidad ="Quilmes"$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Nueve` ()  NO SQL
-SELECT envio.Numero FROM `envios` as envio,`provedores` as prov WHERE prov.Localidad="Avellaneda" and envio.Numero=prov.Numero$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Ocho` ()  NO SQL
-SELECT SUM(envio.Cantidad) FROM `envios` as envio WHERE envio.Numero="102"$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Once` ()  NO SQL
-INSERT INTO `productos`(`pNombre`, `pNumero`, `Precio`, `Tamaño`) VALUES ("Chocolate",4,25.35,"Chico")$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Quince` ()  NO SQL
-UPDATE `productos` as prod,`envios` as envio SET `Tamaño`= "Mediano" WHERE envio.Cantidad >=300 and envio.pNumero=prod.pNumero$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Seis` ()  NO SQL
-SELECT prov.Nombre,prod.pNombre envios FROM `envios` as envio, `provedores` as prov,`productos` as prod WHERE prod.pNumero=envio.pNumero and prov.Numero = envio.Numero$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Siete` ()  NO SQL
-SELECT SUM(envio.Cantidad*prod.Precio) FROM `envios` as envio,`productos` as prod WHERE prod.pNumero=envio.pNumero$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Trece` ()  NO SQL
-INSERT INTO `provedores`(`Numero`, `Nombre`, `Localidad`) VALUES (107,"Rosales","La Plata")$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Tres` ()  NO SQL
-SELECT envio.Numero,envio.pNumero,envio.Cantidad FROM `envios` as envio WHERE envio.Cantidad BETWEEN 200 and 300$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Uno` ()  NO SQL
-SELECT prod.pNombre,prod.pNumero,prod.Precio,prod.Tamaño FROM `productos` as prod ORDER BY prod.pNombre$$
 
 DELIMITER ;
-
 -- --------------------------------------------------------
 
 --
@@ -176,3 +125,56 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Catorce` ()  NO SQL
+UPDATE `productos` as prod SET `Precio`=97.50 WHERE prod.Tamaño="Grande"$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Cinco` ()  NO SQL
+SELECT envio.Numero FROM `envios` as envio ORDER BY envio.Numero LIMIT 3$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Cuatro` ()  NO SQL
+SELECT SUM(prov.Cantidad) FROM `envios` as prov WHERE 1$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Dieciseis` ()  NO SQL
+DELETE FROM `productos` WHERE pNumero=1$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Diecisiete` ()  NO SQL
+DELETE FROM `provedores` WHERE provedores.Numero not in(SELECT envios.Numero FROM envios)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Diez` ()  NO SQL
+SELECT prov.Direccion, prov.Localidad FROM `provedores` as prov WHERE prov.Nombre LIKE'%I%'$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Doce` ()  NO SQL
+INSERT INTO `provedores`(`Numero`) VALUES (103)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Dos` ()  NO SQL
+SELECT prov.Numero,prov.Nombre,prov.Direccion,prov.Localidad FROM `provedores` as prov WHERE prov.Localidad ="Quilmes"$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Nueve` ()  NO SQL
+SELECT envio.Numero FROM `envios` as envio,`provedores` as prov WHERE prov.Localidad="Avellaneda" and envio.Numero=prov.Numero$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ocho` ()  NO SQL
+SELECT SUM(envio.Cantidad) FROM `envios` as envio WHERE envio.Numero="102"$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Once` ()  NO SQL
+INSERT INTO `productos`(`pNombre`, `pNumero`, `Precio`, `Tamaño`) VALUES ("Chocolate",4,25.35,"Chico")$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Quince` ()  NO SQL
+UPDATE `productos` as prod,`envios` as envio SET `Tamaño`= "Mediano" WHERE envio.Cantidad >=300 and envio.pNumero=prod.pNumero$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Seis` ()  NO SQL
+SELECT prov.Nombre,prod.pNombre envios FROM `envios` as envio, `provedores` as prov,`productos` as prod WHERE prod.pNumero=envio.pNumero and prov.Numero = envio.Numero$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Siete` ()  NO SQL
+SELECT SUM(envio.Cantidad*prod.Precio) FROM `envios` as envio,`productos` as prod WHERE prod.pNumero=envio.pNumero$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Trece` ()  NO SQL
+INSERT INTO `provedores`(`Numero`, `Nombre`, `Localidad`) VALUES (107,"Rosales","La Plata")$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Tres` ()  NO SQL
+SELECT envio.Numero,envio.pNumero,envio.Cantidad FROM `envios` as envio WHERE envio.Cantidad BETWEEN 200 and 300$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Uno` ()  NO SQL
+SELECT prod.pNombre,prod.pNumero,prod.Precio,prod.Tamaño FROM `productos` as prod ORDER BY prod.pNombre$$
