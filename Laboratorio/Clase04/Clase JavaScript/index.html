@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script2.js"></script>
+
+    <title>Multitask-JavaScript</title>
+
+</head>
+
+<body>
+    <header>Multtiask</h1>
+    </header>
+    <button id="hora" onclick="mostrarHoraActual()">MostrarHora</button>
+    <p id="p1" onclick="this.innerHTML='Cambie el texto'" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'">Multitask-parrafo</p>
+    <script>
+        
+    </script>
+
+
+    <!--
+<script>
+    /*var x={nombre:"Jonathan",apellido:"Haedo",edad:25};// es un objeto en javaScript
+
+    x.legajo=1000;
+    console.log(x.nombre+" "+x.apellido+" "+x.edad+" "+x.legajo);
+    console.log(x["nombre"]+" "+x["apellido"]+" "+x["edad"]+" "+x["legajo"]);*/
+
+
+
+    function persona(nombre,apellido,edad){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.edad=edad;      
+        this.mostrarNombre=function(){
+            return this.nombre+" "+this.apellido;
+        }  
+    }
+    var personaUno=new persona("jonathan","haedo","25");
+    var personaDos=new persona("jonathan","haedo","25");
+
+    //personaUno.nacionalidad="Argentina";
+    //console.log(personaUno.mostrarNombre());
+    persona.prototype.nacionalidad="Argentina";
+    for(prop in personaUno){
+     // console.log(prop);//devuelve los campos del objeto
+    
+     if( (typeof personaUno[prop]) == "function"){//si el atributo de persona uno es del tipo 'function' entra y ejecuta
+        console.log(personaUno[prop]());
+     }
+    // console.log(prop+" :"+personaUno[prop]);//devuelve el valor cargado en los campos del objeto
+    }
+
+
+</script>
+
+-->
+
+
+    <!--<script>
+    function calcular(a,b,c){
+        return c(a,b);
+    }
+
+    console.log(calcular(5,6,function(a,b){//esto es lo que se llama coolback
+        return a+b;
+    }));
+    </script>-->
+</body>
+
+</html>
