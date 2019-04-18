@@ -123,7 +123,7 @@ class Humano
             </tr>";            
             return $retornoFila;
     }
-    function MostrarAlumno()
+    function MostrarAlumnos()
     {
             echo "<br/>Nombre: ".$this->nombre."<br/>";
             echo "Apellido: ".$this->apellido."<br/>";

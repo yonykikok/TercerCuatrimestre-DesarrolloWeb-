@@ -17,5 +17,11 @@ echo $variable;*/
 
 //-------- BASE DE DATOS
 
- var_dump(Alumno::TraerTodoLosAlumnos()) ;
+ 
+
+ foreach(Alumno::TraerTodoLosAlumnos() as $auxAlumno)
+ {
+     //var_dump($auxAlumno);
+     Alumno::MostrarAlumno($auxAlumno);
+ }
 ?>

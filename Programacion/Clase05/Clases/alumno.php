@@ -85,42 +85,51 @@ class Alumno extends Persona
 				return $objetoAccesoDato->RetornarUltimoIdInsertado();
      }
      
-    public function ModificarAlumno()
+    public function ModificarAlumno($alumnoActual)
     {
            $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso();            
-               if(is_null($this->imagen))
-                {  
-                   $consulta =$objetoAccesoDato->RetornarConsulta("
-                   update alumnos 
-                   set Nombre=:Nombre,
-                   Apellido=:Apellido,
-                   Edad=:Edad,
-                   Legajo=:Legajo,
+               if(is_null($alumnoActual->imagen))
+                {                     
+                   $consulta =$objetoAccesoDato->RetornarConsulta("UPDATE `alumnos`
+                   SET `nombre`=:nombre,
+                   `apellido`=:apellido,
+                   `legajo`=:legajo,
+                   `edad`=:edad 
                    WHERE id=:id");
-                   $consulta->bindValue(':nombre',$this->nombre, PDO::PARAM_STR);
-                   $consulta->bindValue(':apellido',$this->apellido, PDO::PARAM_STR);
-                   $consulta->bindValue(':edad', $this->edad, PDO::PARAM_INT);
-                   $consulta->bindValue(':legajo', $this->legajo, PDO::PARAM_INT); 
-                   $consulta->bindValue(':id', 7, PDO::PARAM_INT); 
-               }
+                    $consulta->bindValue(':nombre',$alumnoActual->nombre, PDO::PARAM_STR);
+                    $consulta->bindValue(':apellido',$alumnoActual->apellido, PDO::PARAM_STR);
+                    $consulta->bindValue(':edad', $alumnoActual->edad, PDO::PARAM_INT);
+                    $consulta->bindValue(':legajo', $alumnoActual->legajo, PDO::PARAM_INT);     
+                   $consulta->bindValue(':id', $this->id, PDO::PARAM_INT); 
+                  
+                }
                else
                {
-                $consulta =$objetoAccesoDato->RetornarConsulta("
-                update alumnos 
-                set Nombre=:Nombre,
-                Apellido=:Apellido,
-                Edad=:Edad,
-                Legajo=:Legajo,
-                Imagen=:Imagen,
+                $consulta =$objetoAccesoDato->RetornarConsulta("UPDATE `alumnos` 
+                SET `nombre`=:nombre,
+                `apellido`=:apellido,
+                `legajo`=:legajo,
+                `edad`=:edad ,
+                `imagen`=:imagen
                 WHERE id=:id");
-                $consulta->bindValue(':nombre',$this->nombre, PDO::PARAM_STR);
-                $consulta->bindValue(':apellido',$this->apellido, PDO::PARAM_STR);
-                $consulta->bindValue(':edad', $this->edad, PDO::PARAM_INT);
-                $consulta->bindValue(':legajo', $this->legajo, PDO::PARAM_INT);                 
-                $consulta->bindValue(':Imagen',$this->imagen, PDO::PARAM_STR);
+                $consulta->bindValue(':nombre',$alumnoActual->nombre, PDO::PARAM_STR);
+                $consulta->bindValue(':apellido',$alumnoActual->apellido, PDO::PARAM_STR);
+                $consulta->bindValue(':edad', $alumnoActual->edad, PDO::PARAM_INT);
+                $consulta->bindValue(':legajo', $alumnoActual->legajo, PDO::PARAM_INT);                 
+                $consulta->bindValue(':imagen',$alumnoActual->imagen, PDO::PARAM_STR);
                 $consulta->bindValue(':id', $this->id, PDO::PARAM_INT); 
                }
+              
            return $consulta->execute();
+    }
+
+    public static function MostrarAlumno($alumno)
+    {
+            echo "<br/>Nombre: ".$alumno->nombre."<br/>";
+            echo "Apellido: ".$alumno->apellido."<br/>";
+            echo "Edad: ".$alumno->edad."<br/>";
+            echo "Legajo: ".$alumno->legajo."<br/>";
+            echo "Imagen: ".$alumno->imagen."<br/>";
     }
 }
 ?>
