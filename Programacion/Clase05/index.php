@@ -18,6 +18,10 @@ else if($dato=="GET")
 }
 else if($dato=="DELETE")
 {
-    require_once "./Funciones/BorrarAlumno.php";
+    require_once "./Funciones/BorrarAlumnoDB.php";
+}
+else if($dato=="OPTIONS")
+{
+    require_once "./Funciones/BuscarAlumnoPorCriterioDB.php";
 }
 ?>

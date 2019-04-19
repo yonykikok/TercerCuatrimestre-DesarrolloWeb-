@@ -19,7 +19,7 @@ class cd
 				return $consulta->rowCount();
 
 	 }
-	 	public static function BorrarCdPorAnio($año)
+	 public static function BorrarCdPorAnio($año)
 	 {
 
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
@@ -30,19 +30,6 @@ class cd
 				$consulta->bindValue(':anio',$año, PDO::PARAM_INT);		
 				$consulta->execute();
 				return $consulta->rowCount();
-
-	 }
-	public function ModificarCd()
-	 {
-
-			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("
-				update cds 
-				set titel='$this->titulo',
-				interpret='$this->cantante',
-				jahr='$this->año'
-				WHERE id='$this->id'");
-			return $consulta->execute();
 
 	 }
 	 public function ModificarCdParametros()
@@ -59,20 +46,6 @@ class cd
 			$consulta->bindValue(':anio', $this->año, PDO::PARAM_STR);
 			$consulta->bindValue(':cantante', $this->cantante, PDO::PARAM_STR);
 			return $consulta->execute();
-	 }
-
-  	public function mostrarDatos()
-	{
-	  	return "Metodo mostar:".$this->titulo."  ".$this->cantante."  ".$this->año;
-	}
-	 public function InsertarElCd()
-	 {
-				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-				$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into cds (titel,interpret,jahr)values('$this->titulo','$this->cantante','$this->año')");
-				$consulta->execute();
-				return $objetoAccesoDato->RetornarUltimoIdInsertado();
-				
-
 	 }
 	 public function InsertarElCdParametros()
 	 {
@@ -101,9 +74,7 @@ class cd
 			$consulta =$objetoAccesoDato->RetornarConsulta("select id, titel as titulo, interpret as cantante,jahr as año from cds where id = $id");
 			$consulta->execute();
 			$cdBuscado= $consulta->fetchObject('cd');
-			return $cdBuscado;				
-
-			
+			return $cdBuscado;	
 	}
 
 	public static function TraerUnCdAnio($id,$anio) 
@@ -125,9 +96,7 @@ class cd
 			$consulta->bindValue(':anio', $anio, PDO::PARAM_STR);
 			$consulta->execute();
 			$cdBuscado= $consulta->fetchObject('cd');
-      		return $cdBuscado;				
-
-			
+      		return $cdBuscado;	
 	}
 	
 	public static function TraerUnCdAnioParamNombreArray($id,$anio) 

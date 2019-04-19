@@ -1,11 +1,11 @@
 <?php
 include_once "./Clases/alumno.php";
 
-$path="./Archivos/ListaAlumnos.txt";
+/*$path="./Archivos/ListaAlumnos.txt";
 $pathJson="./Archivos/ListaAlumnosJson.json";
 $arrayAlumno= array();  
 
-$arrayAlumno=Alumno::LeerAlumnosJson($pathJson);
+$arrayAlumno=Alumno::LeerAlumnosJson($pathJson);*/
 //echo "----------------------------------------------------LISTA Alumnos.json----------------------------------------------\r\n";
 /*$variable=Alumno::insertarHeaderDeTabla();
 foreach($arrayAlumno as $auxAlumno)
@@ -16,9 +16,6 @@ $variable.=Alumno::insertarPieDeTabla();
 echo $variable;*/
 
 //-------- BASE DE DATOS
-
- 
-
  foreach(Alumno::TraerTodoLosAlumnos() as $auxAlumno)
  {
      //var_dump($auxAlumno);

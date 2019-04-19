@@ -18,7 +18,6 @@
                     if(isset($_FILES['img']))
                     {
                         $pathImagen=$_FILES['img']['tmp_name'];
-                        $pathLogo=$_FILES['logo']['tmp_name'];
                         $nameImg=$_FILES['img']['name'];
                         
                         $nameImg=Alumno::changeImgName($nameImg);
@@ -28,7 +27,21 @@
                     }      
                     $alumno = new Alumno();  
                     $alumno->miConstructor($params);
-                    $alumno->InsertarAlumno();  
+                    $arrayAlumnos=Alumno::TraerTodoLosAlumnos();
+                    $contador=0;
+                    foreach($arrayAlumnos as $auxAlumno)
+                    {
+                        $contador=$aviso=$auxAlumno->BuscarAlumnoPorCriterio($params,'legajo',$auxAlumno, $contador);
+                    }    
+                    if($contador>=1)
+                    {
+                        echo "<br>El alumno con legajo ".$alumno->legajo." ya existe con los campos mostrados";
+                    }
+                    else
+                    {
+                        $alumno->InsertarAlumno(); 
+                        echo  "alumno insertado";   
+                    }
                 }
                 else
                 {

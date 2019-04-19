@@ -131,5 +131,96 @@ class Alumno extends Persona
             echo "Legajo: ".$alumno->legajo."<br/>";
             echo "Imagen: ".$alumno->imagen."<br/>";
     }
+
+    public function BorrarAlumno()
+	 {
+
+			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+			$consulta =$objetoAccesoDato->RetornarConsulta("
+				delete 
+				from alumnos 				
+				WHERE id=:id");	
+				$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);		
+				$consulta->execute();
+				return $consulta->rowCount();
+
+     }
+     public static function TraerAlumno($id) 
+     {
+             $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+             $consulta =$objetoAccesoDato->RetornarConsulta("select id, nombre as nombre, apellido as apellido,edad as edad,imagen as imagen,legajo as legajo from alumnos where id = $id");
+             $consulta->execute();
+             $alumnoBuscado= $consulta->fetchObject('Alumno');
+             return $alumnoBuscado;	
+     }
+     /**
+      *Busca en la base de datos un alumno por un criterio pasado en el arrayLeido del Json, compara dicho campo contra el $auxAlumno y devuelve la cantidad de coincidencias 
+      *@param $arrayAlumnoLeido es el array leido del php://input como array
+      *@param $auxAlumno es el alumno a comparar el campo
+      *@param $contador es un contador que nos servira para saber cuantas coincidencias hay en la busqueda
+      *@param $criterio es porque campo vamos a buscar.
+      *@return $contador devuelve el contador de coincidencias.
+      */ 
+     public function BuscarAlumnoPorCriterio($arrayAlumnoLeido,$criterio,$auxAlumno,$contador)
+     {
+
+        if($criterio=="id")//buscamos por id
+        {            
+            if($auxAlumno->id==$arrayAlumnoLeido['id'])
+            {  
+                $alumnoBuscado=$auxAlumno->TraerAlumno($auxAlumno->id);
+                Alumno::MostrarAlumno($alumnoBuscado);    
+                $contador++;
+            }      
+        }
+        else if($criterio=="legajo")//buscamos por legajo
+        {
+            if($auxAlumno->legajo==$arrayAlumnoLeido['legajo'])
+            {  
+                $alumnoBuscado=$auxAlumno->TraerAlumno($auxAlumno->id);
+                Alumno::MostrarAlumno($alumnoBuscado);    
+                $contador++;
+            }      
+        }
+        else if($criterio=="edad")//buscamos por edad
+        {
+            if($auxAlumno->edad==$arrayAlumnoLeido['edad'])
+            {  
+                $alumnoBuscado=$auxAlumno->TraerAlumno($auxAlumno->id);
+                Alumno::MostrarAlumno($alumnoBuscado);    
+                $contador++;
+            }      
+        }
+        else if($criterio=="nombre")//buscamos por nombre
+        {
+            if($auxAlumno->nombre==$arrayAlumnoLeido['nombre'])
+            {  
+                $alumnoBuscado=$auxAlumno->TraerAlumno($auxAlumno->id);
+                Alumno::MostrarAlumno($alumnoBuscado);    
+                $contador++;
+            }      
+        }
+        else if($criterio=="apellido")//buscamos por apellido
+        {
+            if($auxAlumno->apellido==$arrayAlumnoLeido['apellido'])
+            {  
+                $alumnoBuscado=$auxAlumno->TraerAlumno($auxAlumno->id);
+                Alumno::MostrarAlumno($alumnoBuscado);    
+                $contador++;
+            }      
+        }
+        else if($criterio=="nombres")////buscamos por apellido y nombre
+        {
+            if($auxAlumno->apellido==$arrayAlumnoLeido['apellido'] && $auxAlumno->nombre==$arrayAlumnoLeido['nombre'])
+            {  
+                $alumnoBuscado=$auxAlumno->TraerAlumno($auxAlumno->id);
+                Alumno::MostrarAlumno($alumnoBuscado);    
+                $contador++;
+            }      
+        }
+        
+        return $contador;
+        
+     }
 }
 ?>
