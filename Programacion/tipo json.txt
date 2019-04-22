@@ -1,0 +1,1 @@
+{"id":1,"nombre":"Juance","apellido":"Ramirez","edad":19,"legajo":1,"imagen":"./Fotos/Juance1.jpg","criterio":"edad"}
