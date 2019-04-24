@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo-1</title>
+</head>
+
+<body>
+    <img src="./imagen/descarga.jpg" alt="imagen de whatsapp" id="imagen1">
+    <div id="miDiv">
+       
+    </div>
+    <button id="btnEjecutar">Ejecutar</button>
+    <script>
+        var btn = document.getElementById("btnEjecutar");
+        btn.addEventListener('click', ejecutar);
+
+        function ejecutar() {
+            var div=document.getElementById('miDiv');
+           var imagen=document.querySelector('#imagen1');
+           if(imagen.hasAttribute('src')){
+               imagen.removeAttribute('src');
+           }
+           else{
+               console.log("no tiene ese atributo");
+           }
+        }
+    </script>
+</body>
+
+</html>
