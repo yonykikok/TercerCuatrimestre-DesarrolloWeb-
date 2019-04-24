@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    border: 0;
+}
+
+div {
+    left: 15%;
+}
+
+#titleBlog {
+    color: #ff8432;
+    margin: 0;
+}
+
+#titleDe {
+    color: rgb(69, 178, 214);
+    margin: 0;
+}
+
+#titleViajes {
+    color: rgb(209, 65, 209);
+    margin: 0;
+}
+
+.titleP {
+    margin: 0;
+    display: inline-block;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titleDiv {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.pEslogan {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35%;
+    position: relative;
+    left: 154px;
+    font-weight: bold;
+}
+
+
+/*                  NAVMENU                         */
+
+#divMenuPrincipal {
+    background-color: rgb(241, 31, 224);
+}
+
+#navMenu {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
+}
+
+ul,
+ol {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+}
+
+.listaMenu>li {
+    float: left;
+    margin-bottom: -4px;
+}
+.listaMenu li .linkLi{
+    background-color: rgba(65, 195, 238,0.8);
+}
+.listaMenu li a {
+    background-color: rgb(241, 31, 224);
+    color: white;
+    text-decoration: none;
+    padding: 14px 12px;
+    display: block;
+}
+
+.listaMenu li a:hover {
+    background-color: rgb(65, 195, 238);
+    padding: 14px 12px;
+}
+
+.listaMenu li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.listaMenu li:hover>ul {
+    display: block;
+    z-index: 1;
+}
+
+
+/*--------------------------------------------------*/
+
+h5 {
+    margin-top: 80px;
+    margin-bottom: 5px;
+    display: block;
+    color: rgb(81, 202, 243);
+    font-size: 130%;
+}
+
+#firstH5 {
+    margin-top: 20px;
+}
+
+img {
+    height: 150px;
+    width: 200px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.promocionesDiv {
+    position: relative;
+    left: 15%;
+    max-width: 60%;
+}
+
+.promocionesDiv p {
+    max-width: 70%;
+}
+
+.botonCeleste {
+    margin-top: 800px;
+    padding: 10px;
+    background-color: rgb(83, 198, 236);
+    text-decoration: none;
+    padding-right: 5%;
+    padding-left: 5%;
+    color: white;
+}
+
+#SobreNosotrosDiv {
+    background-color: rgb(199, 5, 167);
+    color: white;
+    padding-bottom: 20px;
+}
+
+#SobreNosotrosDiv h5 {
+    color: white;
+}
+
+#SobreNosotrosDiv p,
+#sobreNosotrosH5 {
+    max-width: 40%;
+    position: relative;
+    left: 15%;
+}
+
+#sobreNosotrosDiv p {
+    display: inline-block;
+}
+
+#navMenuSobrePie {
+    position: relative;
+    float: right;
+    text-align: center;
+    margin-right: 10%;
+}
+
+#navMenuSobrePie a {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+#navMenuSobrePie a:hover {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(26, 191, 247);
+}
+
+#navOtrosPosts {
+    position: relative;
+    float: right;
+}
+
+#navOtrosPosts a {
+    margin-left: 5%;
+    display: block;
+    text-decoration: none;
+    min-width: 100%;
+    color: lightblue;
+    padding-left: 10px;
+    padding-right: 100%;
+    margin-bottom: 15%;
+}
+
+#navOtrosPosts a:hover {
+    background-color: lightblue;
+    color: white;
+}
+
+#divOtrosPosts {
+    display: block;
+    margin-right: 20%;
+}
+
+#Derechos {
+    text-align: center;
+}

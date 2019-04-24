@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo-1</title>
+</head>
+<body>
+    <h2>Lenguajes</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <button id="btnEjecutar">Ejecutar</button>
+    <script>
+        var btn=document.getElementById("btnEjecutar");
+        btn.addEventListener('click',ejecutar);     
+    
+        function ejecutar(){
+         //  alert("No me toques!!!");
+         var lista=document.getElementsByTagName('ul')[0];
+        //var hijos=lista.children;//traigo los nodos elements
+         /*childnodes trae todos los nodos hijos
+         children trae todos los nodos ELEMENTOS hijos*/
+         //console.log(lista);
+         //console.log(lista.children.length);//es igual a list.children.count
+         //console.log(lista.childNodes);//cuenta los \n como nodos 
+           /* for(var i=0;i<hijos.length;i++){
+                //console.log(hijos[i]); muestro el array de 3 li
+                //console.log(hijos[i].childNodes[0].nodeValue); accedo al coontenido de un node texto.              
+                console.log(hijos[i].textContent);
+
+            }*/
+        
+        }
+    </script>
+</body>
+</html>
