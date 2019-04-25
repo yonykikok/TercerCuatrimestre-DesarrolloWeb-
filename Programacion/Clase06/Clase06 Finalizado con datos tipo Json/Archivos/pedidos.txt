@@ -1,0 +1,5 @@
+{"id":"0","producto":"Alfajores","cantidad":"25"}
+{"id":"0","producto":"Chupetines","cantidad":"30"}
+{"id":"1","producto":"Juguetes","cantidad":"30"}
+{"id":"2","producto":"Celulares","cantidad":"300"}
+{"id":"4","producto":"Maletines","cantidad":"12312"}

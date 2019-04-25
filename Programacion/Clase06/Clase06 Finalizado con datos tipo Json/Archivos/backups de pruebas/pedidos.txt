@@ -1,0 +1,7 @@
+{"id":"4","producto":"cocaCola","cantidad":"250"}
+{"id":"1","producto":"Pepsi","cantidad":"150"}
+{"id":"1","producto":"auto","cantidad":"150"}
+{"id":"1","producto":"camioneta","cantidad":"10"}
+{"id":"1","producto":"casa","cantidad":"15"}
+{"id":"2","producto":"alfajor","cantidad":"240"}
+{"id":"3","producto":"imanes","cantidad":"2454"}
