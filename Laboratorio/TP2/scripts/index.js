@@ -1,120 +1,137 @@
 var labelBuscador;
 var btnBuscar;
 var miString = JSON.stringify(data);
-var listaObjetos=JSON.parse(miString);
-window.addEventListener("load",function(){            
-    var divTablaPrincipal=document.getElementById('DivTablaPrincipal');
-    labelBuscador=document.getElementById('labelBuscador');
-    btnBuscar=document.getElementById('btnBuscar');
-    
-    CreandoTabla(listaObjetos,divTablaPrincipal); 
+var listaObjetos = JSON.parse(miString);
+var lecturaTr;
+window.addEventListener("load", function() {
+    var divTablaPrincipal = document.getElementById('DivTablaPrincipal');
+    labelBuscador = document.getElementById('labelBuscador');
+    btnBuscar = document.getElementById('btnBuscar');
+    lecturaTr = document.getElementsByTagName('tr');
 
-    btnBuscar.addEventListener('click',function(){      
-          
-        div=document.getElementById('DivTablaPrincipal');
-        div.innerHTML="";
-        var dato=labelBuscador.value;        
-        if(dato=="")
-        {
-            CreandoTabla(listaObjetos,divTablaPrincipal);            
-        }
-        else
-        {
-            
+    CreandoTabla(listaObjetos, divTablaPrincipal);
+
+    btnBuscar.addEventListener('click', function() {
+
+        div = document.getElementById('DivTablaPrincipal');
+        div.innerHTML = "";
+        var dato = labelBuscador.value;
+        if (dato == "") {
+            CreandoTabla(listaObjetos, divTablaPrincipal);
+        } else {
+
             seleccionado();
         }
     });
 
-    labelBuscador.addEventListener('click',function(){
-       this.setAttribute("value","");
+
+    labelBuscador.addEventListener('click', function() {
+        this.setAttribute("value", "");
     });
+
+    var table = document.getElementById("DivTablaPrincipal")
+
+    table.addEventListener("click", ObtenerInformacionDeLinea);
 
 });
 
-function seleccionado() 
-{ 
-    var datoCheckeado = document.getElementsByName("dato");//obtengo la lista de checksbuttoms por medio del Name
+
+function ObtenerInformacionDeLinea() {
+    var tds = event.path[1].children
+    var datos = []; //array donde guardaremos los datos
+    for (var i = 0; i < tds.length; i++) {
+        datos.push(tds[i].innerText) //se guardan los datos de la linea en el array
+    }
+
+    if (datos.length == 6) //si lo que se clickea es una linea, llena el form Persona de lo contrario no ahce nada
+    {
+        cargarElFormPersona(datos);
+    }
+}
+
+function cargarElFormPersona(datos) {
+    document.getElementById('idFormPersona').value = datos[0];
+    document.getElementById('first_nameFormPersona').value = datos[1];
+    document.getElementById('last_nameFormPersona').value = datos[2];
+    document.getElementById('emailFormPersona').value = datos[3];
+    document.getElementById('genderFormPersona').value = datos[4];
+    document.getElementById('ip_addressFormPersona').value = datos[5];
+}
+
+function seleccionado() {
+    var datoCheckeado = document.getElementsByName("dato"); //obtengo la lista de checksbuttoms por medio del Name
     var datoSeleccionado;
-    
-    for(var i = 0; i < datoCheckeado.length; i++) {
-       if(datoCheckeado[i].checked)
-       {
-        datoSeleccionado = datoCheckeado[i].id;//el dato seleccionado va a ser igual al nombre de Id          
-           CreandoTablaFiltradaPorDato(listaObjetos,div,datoSeleccionado);//se busca por ese dato
-       }
-     }
-}
-function CreandoTablaFiltradaPorDato(listaObjetos,miDiv,buscarPor)//se le pasa la lista de objetos, el Div que contendra la tabla y el nombre para agregarlos
-{       
-    var tabla =document.createElement('table');
-    miDiv.appendChild(tabla);     
 
-    CrearHeaderDeTablaObject(tabla,listaObjetos[0]);
-    if(buscarPor=="id")
-    {
-        for(var i=0;i<listaObjetos.length;i++)
-        {  
-            if(listaObjetos[i][buscarPor]==labelBuscador.value)
-            {
-                CrearTdObjeto(tabla,listaObjetos[i]);
-            }            
-           
+    for (var i = 0; i < datoCheckeado.length; i++) {
+        if (datoCheckeado[i].checked) {
+            datoSeleccionado = datoCheckeado[i].id; //el dato seleccionado va a ser igual al nombre de Id          
+            CreandoTablaFiltradaPorDato(listaObjetos, div, datoSeleccionado); //se busca por ese dato
         }
     }
-    else
-    {   
-        for(var i=0;i<listaObjetos.length;i++)
-        {  
-            if(listaObjetos[i][buscarPor].toLowerCase()==labelBuscador.value.toLowerCase())
-            {
-                CrearTdObjeto(tabla,listaObjetos[i]);
-            }           
-           
-        }
-    }
-        
 }
 
-function CreandoTabla(listaObjetos,miDiv)//se le pasa la lista de objetos y el Div que contendra la tabla
-{       
-    //Creando la tabla
-    var tabla =document.createElement('table');
-        
-    miDiv.appendChild(tabla);     
-
-    CrearHeaderDeTablaObject(tabla,listaObjetos[0]);
-
-    for(var i=0;i<listaObjetos.length;i++)
-    {  
-        CrearTdObjeto(tabla,listaObjetos[i]);
-    }
-}
-
-function CrearTdObjeto(tabla,objeto)//Usamos esta para hacerlo Generico
+function CreandoTablaFiltradaPorDato(listaObjetos, miDiv, buscarPor) //se le pasa la lista de objetos, el Div que contendra la tabla y el nombre para agregarlos
 {
-    var listaDeParametros=Object.keys(objeto);//obtiene un array con las keys 
-    tr =document.createElement('tr');//creamos la row para los datos
-    for(var i=0;i<listaDeParametros.length;i++)//recorro tantas veces como keys tenga
+    var tabla = document.createElement('table');
+    miDiv.appendChild(tabla);
+
+    CrearHeaderDeTablaObject(tabla, listaObjetos[0]);
+    if (buscarPor == "id") {
+        for (var i = 0; i < listaObjetos.length; i++) {
+            if (listaObjetos[i][buscarPor] == labelBuscador.value) {
+                CrearTdObjeto(tabla, listaObjetos[i]);
+            }
+
+        }
+    } else {
+        for (var i = 0; i < listaObjetos.length; i++) {
+            if (listaObjetos[i][buscarPor].toLowerCase() == labelBuscador.value.toLowerCase()) {
+                CrearTdObjeto(tabla, listaObjetos[i]);
+            }
+
+        }
+    }
+
+}
+
+function CreandoTabla(listaObjetos, miDiv) //se le pasa la lista de objetos y el Div que contendra la tabla
+{
+    //Creando la tabla
+    var tabla = document.createElement('table');
+
+    miDiv.appendChild(tabla);
+
+    CrearHeaderDeTablaObject(tabla, listaObjetos[0]);
+
+    for (var i = 0; i < listaObjetos.length; i++) {
+        CrearTdObjeto(tabla, listaObjetos[i]);
+    }
+}
+
+function CrearTdObjeto(tabla, objeto) //Usamos esta para hacerlo Generico
+{
+    var listaDeParametros = Object.keys(objeto); //obtiene un array con las keys 
+    tr = document.createElement('tr'); //creamos la row para los datos
+    for (var i = 0; i < listaDeParametros.length; i++) //recorro tantas veces como keys tenga
     {
-        var campo=listaDeParametros[i];
-        td=document.createElement('td');     
-        texto=document.createTextNode(objeto[campo]);
+        var campo = listaDeParametros[i];
+        td = document.createElement('td');
+        texto = document.createTextNode(objeto[campo]);
         td.appendChild(texto);
         tr.appendChild(td);
     }
     tabla.appendChild(tr);
 }
-function CrearHeaderDeTablaObject(tabla,objeto)
-{    
-    var listaDeParametros=Object.keys(objeto);//obtiene un array con las keys 
-   
-    trHeader =document.createElement('tr'); //creamos la head de la tabla
-    
-    for(var i=0;i<listaDeParametros.length;i++)
-    {
-        var campo=listaDeParametros[i];
-        td=document.createElement('td');     
-        texto=document.createTextNode(campo);
+
+function CrearHeaderDeTablaObject(tabla, objeto) {
+    var listaDeParametros = Object.keys(objeto); //obtiene un array con las keys 
+
+    trHeader = document.createElement('tr'); //creamos la head de la tabla
+
+    for (var i = 0; i < listaDeParametros.length; i++) {
+        var campo = listaDeParametros[i];
+        td = document.createElement('td');
+        texto = document.createTextNode(campo);
         td.appendChild(texto);
         trHeader.appendChild(td);
     }

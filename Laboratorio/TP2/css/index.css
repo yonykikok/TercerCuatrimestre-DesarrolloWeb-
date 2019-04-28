@@ -1,30 +1,99 @@
-.DivCentrado{
+.DivCentrado {
     text-align: center;
 }
 
-td{
+td {
     text-align: center;
 }
-table,td,th,tr{
+
+tr:hover {
+    background-color: rgba(146, 253, 160, 0.5);
+}
+
+table,
+td,
+th,
+tr {
     border: 1px solid blue;
     border-collapse: collapse;
     padding: 5px;
 }
-#DivTablaPrincipal>table{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+
+.checkButton {
+    display: inline-block;
 }
-.checkButton{
-display: inline-block;
-}
-form{
+
+#formBuscador {
     margin-bottom: 15px;
     border-top: 2px solid black;
-    border-bottom: 2px solid black;    
+    border-bottom: 2px solid black;
     border-radius: 15px;
     display: inline-block;
     padding-bottom: 15px;
     min-width: 30%;
-    background-color:lightblue;
+    background-color: rgb(198, 238, 252);
+}
+
+tr:nth-child(even)
+/*even=par / odd=impar*/
+
+{
+    background-color: rgba(98, 132, 243, 0.3);
+    transition: background-color 5s;
+}
+
+#FormPersona {
+    position: relative;
+    float: right;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(198, 238, 252);
+}
+
+#FormPersona p {
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#FormPersona input {
+    position: relative;
+    float: right;
+    margin-left: 10px;
+    padding-left: 4px;
+}
+
+#DivTablaPrincipal>table {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#DivTablaPrincipal {
+    max-width: 70%;
+    display: inline;
+}
+
+#btnModificar,
+#btnCancelar {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: rgb(198, 238, 252);
+    width: 100px;
+}
+
+#btnModificar {
+    float: left;
+    margin-left: 30px;
+}
+
+#btnCancelar {
+    float: right;
+    margin-right: 30px;
+}
+
+#btnModificar:hover,
+#btnCancelar:hover {
+    background-color: rgb(39, 176, 226);
 }
