@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <title>Haedo Jonathan LabIII</title>
+</head>
+
+<body>
+    <div class="DivCentrado">
+        <h1>Lista Principal</h1>
+    </div>
+    <hr>
+    <div id="DivBuscardor" class="DivCentrado">
+        <form action="#" method="GET" id="formBuscador">
+            <div>
+                <label for="id">id<input type="radio" name="dato" id="id"></label>
+                <label for="first_name">nombre<input type="radio" name="dato" id="first_name"></label>
+                <label for="last_name">apellido<input type="radio" name="dato" id="last_name"></label>
+                <label for="email">correo<input type="radio" name="dato" id="email"></label>
+                <label for="gender">sexo<input type="radio" name="dato" id="gender"></label>
+                <label for="ip_address">direccion ip<input type="radio" name="dato" id="ip_address"></label>
+            </div>
+            <input type="text" value="Buscar" id="labelBuscador">
+            <input type="button" value="Buscar" id="btnBuscar">
+
+        </form>
+    </div>
+    <div id="DivTablaPrincipal"></div>
+</body>
+
+</html>

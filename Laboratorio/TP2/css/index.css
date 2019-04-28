@@ -1,0 +1,30 @@
+.DivCentrado{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+table,td,th,tr{
+    border: 1px solid blue;
+    border-collapse: collapse;
+    padding: 5px;
+}
+#DivTablaPrincipal>table{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.checkButton{
+display: inline-block;
+}
+form{
+    margin-bottom: 15px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;    
+    border-radius: 15px;
+    display: inline-block;
+    padding-bottom: 15px;
+    min-width: 30%;
+    background-color:lightblue;
+}
