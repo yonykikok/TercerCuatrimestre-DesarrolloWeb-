@@ -11,30 +11,55 @@ window.addEventListener("load", function() {
 
     CreandoTabla(listaObjetos, divTablaPrincipal);
 
+    //boton buscar
     btnBuscar.addEventListener('click', function() {
 
         div = document.getElementById('DivTablaPrincipal');
         div.innerHTML = "";
         var dato = labelBuscador.value;
         if (dato == "") {
-            CreandoTabla(listaObjetos, divTablaPrincipal);
+            CreandoTabla(data, divTablaPrincipal);
         } else {
 
-            seleccionado();
+            seleccionado(); //checkButton seleccionado.
         }
     });
 
-
+    //label buscar
     labelBuscador.addEventListener('click', function() {
         this.setAttribute("value", "");
     });
 
     var table = document.getElementById("DivTablaPrincipal")
 
+    //obtener datos de linea al Clickear
     table.addEventListener("click", ObtenerInformacionDeLinea);
+
+    var btnModificar = document.getElementById('btnModificar');
+    btnModificar.addEventListener('click', function() {
+        var auxId = document.getElementById('idFormPersona').value;
+        modificarPersona(data, auxId);
+    })
 
 });
 
+function modificarPersona(data, id) {
+    auxName = document.getElementById('first_nameFormPersona').value;
+    auxLastName = document.getElementById('last_nameFormPersona').value;
+    auxEmail = document.getElementById('emailFormPersona').value;
+    auxGender = document.getElementById('genderFormPersona').value;
+    auxIpAddress = document.getElementById('ip_addressFormPersona').value;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i]['id'] == id) {
+            alert(data[i]['first_name'] + "->" + auxName);
+            data[i]['first_name'] = auxName;
+            data[i]['last_name'] = auxLastName;
+            data[i]['email'] = auxEmail;
+            data[i]['gender'] = auxGender;
+            data[i]['ip_address'] = auxIpAddress;
+        }
+    }
+}
 
 function ObtenerInformacionDeLinea() {
     var tds = event.path[1].children
