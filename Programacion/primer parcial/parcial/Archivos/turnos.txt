@@ -1,0 +1,1 @@
+{"fecha":"10","patente":"gow233","marca":"benz","precio":"25000","modelo":"200","tipo":"10.000km"}
