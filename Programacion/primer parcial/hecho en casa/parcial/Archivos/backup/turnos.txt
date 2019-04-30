@@ -1,0 +1,2 @@
+{"fecha":"20","patente":"jji209","marca":"vw","precio":"170000","modelo":"2010","tipo":"50.000km"}
+{"fecha":"20","patente":"jji209","marca":"vw","precio":"170000","modelo":"2010","tipo":"50.000km"}

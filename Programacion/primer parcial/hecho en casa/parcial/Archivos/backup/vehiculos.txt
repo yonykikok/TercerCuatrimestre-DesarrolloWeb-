@@ -1,0 +1,6 @@
+{"patente":"EMI205","marca":"Suzuki","modelo":"2008","precio":"45000"}
+{"patente":"jji209","marca":"vw","modelo":"2010","precio":"170000"}
+{"patente":"jji210","marca":"vw","modelo":"2011","precio":"150000"}
+{"patente":"0asb214","marca":"renault","modelo":"2019","precio":"150000"}
+{"patente":"00asb214","marca":"renault","modelo":"2019","precio":"130000"}
+{"patente":"EMI255","marca":"Suzuki","modelo":"2008","precio":"45000"}
