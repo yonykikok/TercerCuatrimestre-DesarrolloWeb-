@@ -1,4 +1,0 @@
-1;jonathan;jonathan@gmail.com;Sailor Moon Anime 50.jpg
-2;Lucia;Lucia@gmail.com;Sailor Moon Anime 50.jpg
-3;Multitask;Multitask@gmail.com;anime.jpg3;Multitask;Multitask@gmail.com;anime.jpg3;Multitask;Multitask@gmail.com;anime.jpg3;Multitask;Multitask@gmail.com;anime.jpg3;Multitask;Multitask@gmail.com;anime.jpg3;Multitask;Multitask@gmail.com;anime.jpg
-5;Multitask;Multitask@gmail.com;anime.jpg

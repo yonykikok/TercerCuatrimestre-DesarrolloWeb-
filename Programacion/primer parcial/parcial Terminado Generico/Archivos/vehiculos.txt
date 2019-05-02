@@ -1,0 +1,4 @@
+{"patente":"emi205","marca":"suzuki","modelo":"2016","precio":"40000","foto":".\/Fotos\/emi205.jpg"}
+{"patente":"ASD954","marca":"fiat","modelo":"1998","precio":"45000","foto":".\/Fotos\/ASD954.jpg"}
+{"patente":"jji209","marca":"volkswagen","modelo":"2016","precio":"190000","foto":".\/Fotos\/jji209.jpg"}
+{"patente":"10sdg254","marca":"audi","modelo":"2017","precio":"250000","foto":".\/Fotos\/10sdg254.jpg"}

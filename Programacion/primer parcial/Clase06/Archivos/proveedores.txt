@@ -1,5 +1,0 @@
-{"id":"0","nombre":"Multitask","email":"Multitask@gmail.com","foto":"anime.jpg"}
-{"id":"1","nombre":"Multitask","email":"Multitask@gmail.com","foto":"anime.jpg"}
-{"id":"2","nombre":"Multitask","email":"Multitask@gmail.com","foto":"anime.jpg"}
-{"id":"4","nombre":"Multitask","email":"Multitask@gmail.com","foto":"anime.jpg"}
-{"id":"5","nombre":"Multitask","email":"Multitask@gmail.com","foto":"anime.jpg"}

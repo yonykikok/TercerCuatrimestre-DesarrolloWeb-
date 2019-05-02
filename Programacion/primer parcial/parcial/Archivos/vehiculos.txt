@@ -1,3 +1,0 @@
-{"patente":"GGD205","marca":"renault","modelo":"2015","precio":"25000"}
-{"patente":"GGD206","marca":"renault","modelo":"2015","precio":"25000"}
-{"patente":"gow233","marca":"benz","modelo":"200","precio":"25000"}

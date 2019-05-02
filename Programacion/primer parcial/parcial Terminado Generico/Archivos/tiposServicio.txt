@@ -1,0 +1,4 @@
+{"id":"1","nombre":"cambio de hembrague","tipo":"10.000km","precio":"5000","demora":"2 horas"}
+{"id":"2","nombre":"Cambio de Frenos y Correa","tipo":"20.000km","precio":"1000","demora":"10 horas"}
+{"id":"3","nombre":"cambio de motor","tipo":"50.000km","precio":"50000","demora":"2 dias"}
+{"id":"4","nombre":"cambio de aceite y filtro","tipo":"20.000km","precio":"2000","demora":"2 dias"}

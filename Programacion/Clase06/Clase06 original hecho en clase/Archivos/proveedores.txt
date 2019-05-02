@@ -1,6 +1,0 @@
-1;jonathan;jonathan@gmail.com;Desert.jpg
-2;jonathan;jonathan@gmail.com;Desert.jpg
-3;martinez;martinez@gmail.com;Penguins.jpg
-4;jonathan;jonathan@gmail.com;Desert.jpg
-5;brian;brianez@gmail.com;Penguins.jpg
-6;martinez;martinez@gmail.com;Penguins.jpg

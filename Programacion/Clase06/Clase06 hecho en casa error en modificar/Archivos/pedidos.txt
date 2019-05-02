@@ -1,7 +1,0 @@
-2;monitor;25
-3;celular;25
-2;tapetes;25
-4;heladera;25
-4;microprocesadores;25
-3;monitor led;25
-2;Rad60;55

@@ -1,0 +1,4 @@
+{"fecha":"20","patente":"JJI209","marca":"volkswagen","precio":"170000","modelo":"2010","tipo":"50.000km"}
+{"fecha":"10","patente":"JJI209","marca":"volkswagen","precio":"170000","modelo":"2010","tipo":"20.000km"}
+{"fecha":"15","patente":"jji209","marca":"volkswagen","precio":"170000","modelo":"2010","tipo":"10.000km"}
+

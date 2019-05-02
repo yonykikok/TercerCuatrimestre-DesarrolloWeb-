@@ -1,2 +1,0 @@
-{"fecha":"20","patente":"eMi255","marca":"Suzuki","precio":"45000","modelo":"2008","tipo":"10.000km"}
-{"fecha":"20","patente":"jji209","marca":"vw","precio":"170000","modelo":"2010","tipo":"50.000km"}
