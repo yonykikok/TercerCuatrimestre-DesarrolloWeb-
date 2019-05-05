@@ -1,0 +1,5 @@
+{"patente":"yyy000","marca":"suzuki","modelo":"gn 125","precio":"$18.500","foto":".\/Fotos\/yyy000.jpg"}
+{"patente":"jji2019","marca":"suzuki","modelo":"gn 125","precio":"$18.500","foto":null}
+{"patente":"asd123","marca":"suzuki","modelo":"gn 125","precio":"$18.500","foto":null}
+{"patente":"asd124","marca":"suzuki","modelo":"gn 125","precio":"$18.500","foto":null}
+{"patente":"asd125","marca":"suzuki","modelo":"gn 125","precio":"$18.500","foto":null}
