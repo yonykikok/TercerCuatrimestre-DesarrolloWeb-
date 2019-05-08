@@ -1,0 +1,10 @@
+var personas=[{"id":1,"first_name":"Calvin","last_name":"Waterhouse","email":"cwaterhouse0@umich.edu","gender":"Male"},
+{"id":2,"first_name":"Holt","last_name":"Carsey","email":"hcarsey1@usnews.com","gender":"Male"},
+{"id":3,"first_name":"Vivianna","last_name":"Orrom","email":"vorrom2@wikipedia.org","gender":"Female"},
+{"id":4,"first_name":"Herold","last_name":"Khosa","email":"hkhosa3@stumbleupon.com","gender":"Male"},
+{"id":5,"first_name":"Jacquelynn","last_name":"Hookes","email":"jhookes4@marketwatch.com","gender":"Female"},
+{"id":6,"first_name":"Wilmette","last_name":"MacDunleavy","email":"wmacdunleavy5@utexas.edu","gender":"Female"},
+{"id":7,"first_name":"Mirna","last_name":"Durham","email":"mdurham6@kickstarter.com","gender":"Female"},
+{"id":8,"first_name":"Elvina","last_name":"Relph","email":"erelph7@nps.gov","gender":"Female"},
+{"id":9,"first_name":"Filmer","last_name":"Fearney","email":"ffearney8@123-reg.co.uk","gender":"Male"},
+{"id":10,"first_name":"Gunner","last_name":"Matthewman","email":"gmatthewman9@phpbb.com","gender":"Male","dni":"54645454","address":"Marco Avellaneda"}];
