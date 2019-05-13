@@ -1,0 +1,4 @@
+{"producto":"Celulares","cantidad":"15","idProveedor":"1"}
+{"producto":"Celulares","cantidad":"15","idProveedor":"2"}
+{"producto":"Celulares","cantidad":"15","idProveedor":"5"}
+{"producto":"Celulares","cantidad":"15","idProveedor":"23"}
