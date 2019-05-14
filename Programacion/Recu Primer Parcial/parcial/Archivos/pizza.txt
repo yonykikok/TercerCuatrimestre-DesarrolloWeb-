@@ -1,0 +1,5 @@
+{"id":0,"sabor":"especial","precio":null,"tipo":"molde","cantidad":21}
+{"id":1,"sabor":"muzza","precio":null,"tipo":"piedra","cantidad":"31"}
+{"id":2,"sabor":"muzza","precio":"300","tipo":"piedra","cantidad":"31"}
+{"id":3,"sabor":"muzza","precio":"300","tipo":"piedra","cantidad":"31"}
+{"id":5,"sabor":"muzza","precio":"300","tipo":"molde","cantidad":1}
