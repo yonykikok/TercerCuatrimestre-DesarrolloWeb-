@@ -1,0 +1,2 @@
+CargarTabla(data, string);
+void {};

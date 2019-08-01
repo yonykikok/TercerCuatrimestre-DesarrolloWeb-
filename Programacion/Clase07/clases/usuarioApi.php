@@ -86,10 +86,9 @@ class usuarioApi extends usuario implements IApiUsable
 	   $miUsuario->usuario=$ArrayDeParametros['usuario'];	
 	   
 	   $resultado =$miUsuario->TraerUnUsuarioPorLogin($ArrayDeParametros['usuario'],$ArrayDeParametros['password']);
-	   var_dump($resultado) ;
-		 die();	
+	   //var_dump($resultado);
+		 //die();	
 		  $objDelaRespuesta= new stdclass();
-
 	   $objDelaRespuesta->resultado=$resultado;
 	   return $response->withJson($objDelaRespuesta, 200);		
    }
